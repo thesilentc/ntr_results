@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/ntr_results'
+
+NtrResults::CLI.new.call
