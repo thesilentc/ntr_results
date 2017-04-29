@@ -1,5 +1,5 @@
 
-class NtrResults::CLI
+class NtrResults::CLI #controller cli
 
   def call
     list_results
@@ -19,9 +19,15 @@ class NtrResults::CLI
   end
 
   def menu
-    puts "Enter the number of the event you'd like more information about or type list to view the events again or type exit to exit"
+
     input = nil
     while input != 'exit'
+      sleep 0.5
+      puts "Enter the number of the event you'd like more information about"
+      sleep 1.0
+      puts "or type 'list' to view the events again"
+      sleep 1.0
+      puts "or type 'exit' to exit"
       input = gets.strip.downcase
       case input
       when "1"
@@ -32,6 +38,7 @@ class NtrResults::CLI
         puts "Results from event 3..."
       when 'list'
         list_results
+      else puts "I don't understand what you want. Please type 'list' or 'exit'."
       end
     end
   end
