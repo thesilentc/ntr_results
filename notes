@@ -1,4 +1,12 @@
-Event 1. VIP's Win
+what is an event
+An Event has a name
+An event has a date
+An event has a url
+An event has a winner
+An event has a prize
+
+
+Event 1. VIPs Win
 http://nationalteamroping.com/article-817-vips-win-%25249820_.html
 
 
@@ -16,3 +24,17 @@ http://nationalteamroping.com/article-816-%25245000-sat.html
 
 Event 3. TGIF 4/7/17
 http://nationalteamroping.com/article-815-tgif-4_7_17.html
+
+def display_events
+    Event.all.each do |event|
+      puts "#{event.name.upcase}".colorize(:blue)
+      puts "  location:".colorize(:light_blue) + " #{event.location}"
+      puts "  profile quote:".colorize(:light_blue) + " #{event.profile_quote}"
+      puts "  bio:".colorize(:light_blue) + " #{event.bio}"
+      puts "  twitter:".colorize(:light_blue) + " #{event.twitter}"
+      puts "  linkedin:".colorize(:light_blue) + " #{event.linkedin}"
+      puts "  github:".colorize(:light_blue) + " #{event.github}"
+      puts "  blog:".colorize(:light_blue) + " #{event.blog}"
+      puts "----------------------".colorize(:green)
+    end
+  end
