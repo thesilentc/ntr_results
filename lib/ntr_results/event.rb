@@ -9,9 +9,11 @@ class NtrResults::Event
   def self.scrape_events
     events = []
 
-    events << self.scrape_ntr
+    events << self.scrape_ntr1
+    events << self.scrape_ntr2
+    events << self.scrape_ntr3
 
-    # crape nationalteamroping.com, find the events
+    # scrape nationalteamroping.com, find the events
     # extract the properties/attributes
     # instantiate an event
 
@@ -34,9 +36,38 @@ class NtrResults::Event
     events
   end
 
-def self.scrape_ntr
-  doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-816-%25245000-sat.html"))
-  binding.pry
+  def self.scrape_ntr1
+    doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-812-rancho-rio-qualifier.html"))
 
+    event = self.new
+    event.name = doc.search("#article-812 p")[0].text
+    event.date  = doc.search("#article-812 p")[1].text
+    event.location = doc.search("#article-812 p")[2].text
+
+    event
+  end
+
+def self.scrape_ntr2
+  doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-815-tgif-4_7_17.html"))
+
+  event = self.new
+  event.name = doc.search("#article-815 p")[0].text
+  event.date  = doc.search("#article-815 p")[1].text
+  event.location = doc.search("#article-815 p")[2].text
+
+  event
 end
+
+def self.scrape_ntr3
+  doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-816-%25245000-sat.html"))
+
+  event = self.new
+  event.name = doc.search("#article-816 p")[0].text
+  event.date  = doc.search("#article-816 p")[1].text
+  event.location = doc.search("#article-816 p")[2].text
+
+  event
+end
+
+
 end
