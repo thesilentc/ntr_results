@@ -12,6 +12,7 @@ class NtrResults::Event
     events << self.scrape_ntr1
     events << self.scrape_ntr2
     events << self.scrape_ntr3
+    # events << self.scrape_ntr4
 
     # scrape nationalteamroping.com, find the events
     # extract the properties/attributes
@@ -69,5 +70,18 @@ def self.scrape_ntr3
   event
 end
 
+# def self.scrape_index_page(index_url)
+#     index_page = Nokogiri::HTML(open(index_url))
+#     students = []
+#     index_page.css("div.roster-cards-container").each do |card|
+#       card.css(".student-card a").each do |student|
+#         student_profile_link = "./fixtures/student-site/#{student.attr('href')}"
+#         student_location = student.css('.student-location').text
+#         student_name = student.css('.student-name').text
+#         students << {name: student_name, location: student_location, profile_url: student_profile_link}
+#       end
+#     end
+#     students
+#   end
 
 end
