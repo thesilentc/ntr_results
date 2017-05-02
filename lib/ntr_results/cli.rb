@@ -6,6 +6,7 @@ class NtrResults::CLI #controller cli
     menu
     # turbo_encabulator
 
+
   end
 
   def list_results
@@ -20,7 +21,7 @@ class NtrResults::CLI #controller cli
   def menu
     input = nil
     while input != 'exit'
-      puts ""
+      puts
       puts "Enter the number of the event you'd like more information about"
       puts "or type 'list' to view the events again"
       puts "or type 'exit' to exit"
@@ -28,10 +29,12 @@ class NtrResults::CLI #controller cli
 
       if input.to_i > 0
         main_event = @events[input.to_i-1]
-        puts "#{main_event.name} - #{main_event.date} - #{main_event.location}"
+        puts "#{main_event.winner}"
       elsif input == "list"
         list_results
       elsif input == "exit"
+        turbo_encabulator
+      elsif input > 3
         turbo_encabulator
       else
         puts " "
@@ -39,6 +42,7 @@ class NtrResults::CLI #controller cli
         puts " "
       end
     end
+    main_event
   end
 
   def turbo_encabulator
