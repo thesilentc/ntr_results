@@ -29,7 +29,7 @@ class NtrResults::CLI #controller cli
 
       if input.to_i > 0
         main_event = @events[input.to_i-1]
-        puts "#{main_event.winner}"
+        puts "#{main_event.winner}" # getting undefined method error #winner 
       elsif input == "list"
         list_results
       elsif input == "exit"
