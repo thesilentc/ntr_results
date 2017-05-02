@@ -34,8 +34,8 @@ class NtrResults::CLI #controller cli
         list_results
       elsif input == "exit"
         turbo_encabulator
-      elsif input > 3
-        turbo_encabulator
+      elsif input.empty?
+        puts "I'm sorry. I don't understand what you want."
       else
         puts " "
         puts "I'm sorry. I don't understand what you want."

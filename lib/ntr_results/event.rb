@@ -37,6 +37,18 @@ class NtrResults::Event
     events
   end
 
+# http://stackoverflow.com/questions/36430212/how-to-get-nokogiri-inner-html-object-to-ignore-remove-escape-sequences
+
+# http://kevinquillen.com/programming/2014/06/26/more-ruby-scraping-madness
+
+  # If your HTML fragment is in html, then you could do something like this:
+  #
+  # doc = Nokogiri::HTML(html)
+  # div = doc.at_css('#level2')   # Extract <div id="level2">
+  # div.at_css('#level3').remove  # Remove <div id="level3">
+  # text_you_want = div.inner_text
+  # You could also do it with XPath but I find CSS selectors a bit simpler for simple cases like this.
+
   def self.scrape_ntr1
     doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-812-rancho-rio-qualifier.html"))
 
