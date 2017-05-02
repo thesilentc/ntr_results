@@ -20,9 +20,10 @@ class NtrResults::CLI #controller cli
   def menu
     input = nil
     while input != 'exit'
-      puts " "
+      puts ""
       puts "Enter the number of the event you'd like more information about"
-      puts "or type 'list' to view the events again or type 'exit' to exit"
+      puts "or type 'list' to view the events again"
+      puts "or type 'exit' to exit"
       input = gets.strip.downcase
 
       if input.to_i > 0
@@ -41,9 +42,7 @@ class NtrResults::CLI #controller cli
   end
 
   def turbo_encabulator
-    puts " "
     puts "Check back next week for more NTR results"
-    puts " "
   end
 
 end
