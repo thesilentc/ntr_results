@@ -2,20 +2,34 @@
 class NtrResults::CLI #controller cli
 
   def call
-    list_results
+    list_events
     menu
     # turbo_encabulator
 
 
   end
 
-  def list_results
+  # def list_teams
+  #
+  #     rows = []
+  #
+  #     @teams ||= EplCliGem::Team.sorted
+  #     @teams.each.with_index(1) do |team, i|
+  #       rows << [i, team.name, team.games_played, team.goal_diff, team.points]
+  #     end
+
+
+  def list_events
+
+    rows = []
     puts "----------National Team Roping Results:----------"
     puts " "
     @events = NtrResults::Event.today
     @events.each.with_index(1) do |event, i|
-      puts "#{i}. #{event.name} - #{event.date} - #{event.location}"
+      rows << [i, event.name]
+      #puts "#{i}. #{event.name}"# - #{event.date} - #{event.location}"
     end
+    list_events
   end
 
   def menu
@@ -29,7 +43,7 @@ class NtrResults::CLI #controller cli
 
       if input.to_i > 0
         main_event = @events[input.to_i-1]
-        puts "#{main_event.winner}" # getting undefined method error #winner 
+        puts "#{main_event.winner}" # getting undefined method error #winner
       elsif input == "list"
         list_results
       elsif input == "exit"

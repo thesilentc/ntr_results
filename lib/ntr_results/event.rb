@@ -50,13 +50,16 @@ class NtrResults::Event
   # You could also do it with XPath but I find CSS selectors a bit simpler for simple cases like this.
 
   def self.scrape_ntr1
-    doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-812-rancho-rio-qualifier.html"))
+    # doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-812-rancho-rio-qualifier.html"))
+    doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
 
     event = self.new
-    event.name = doc.search("#article-812 p")[0].text
-    event.date  = doc.search("#article-812 p")[1].text
-    event.location = doc.search("#article-812 p")[2].text
-    event.winner = doc.search("#contentText p")[10].text  # => "1st in Ave - 33.62 on 4, Sam Scott & John Miller  $1350"
+    event.name = doc.css(".title-txt h1").text
+    # binding.pry
+    # event.name = doc.search("#article-812 p")[0].text
+    # event.date  = doc.search("#article-812 p")[1].text
+    # event.location = doc.search("#article-812 p")[2].text
+    # event.winner = doc.search("#contentText p")[10].text  # => "1st in Ave - 33.62 on 4, Sam Scott & John Miller  $1350"
     # binding.pry
 
     event
