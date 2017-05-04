@@ -6,7 +6,6 @@ class NtrResults::CLI #controller cli
     menu
     # turbo_encabulator
 
-
   end
 
   def list_results
