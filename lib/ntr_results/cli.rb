@@ -24,12 +24,12 @@ class NtrResults::CLI #controller cli
     rows = []
     puts "----------National Team Roping Results:----------"
     puts " "
-    @events ||= NtrResults::Event.today
+    @events ||= NtrResults::Event.all
     @events.each.with_index(1) do |event, i|
-      rows << [i, event.name]
-      #puts "#{i}. #{event.name}"# - #{event.date} - #{event.location}"
+      # rows << [i, event.name]
+      puts "#{i}. #{event.name}"# - #{event.date} - #{event.location}"
     end
-    puts list_events
+      list_events
   end
 
   def menu
