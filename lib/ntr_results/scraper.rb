@@ -21,8 +21,9 @@ class NtrResults::Event
 
 end
 
-def scrape_events
-doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
-events = doc.css(".title-txt h1").text
-events.split('').map{|event| event.to_i }
-end
+# scrape all events from a single pahge
+# def scrape_events
+# doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
+# events = doc.css(".title-txt h1").text
+# events.split('').map{|event| event.to_i }
+# end
