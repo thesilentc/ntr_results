@@ -9,6 +9,10 @@ require "ntr_results"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
+def reload!
+  load './lib/ntr_results/event.rb'
+end
+
 
 require "irb"
 IRB.start(__FILE__)

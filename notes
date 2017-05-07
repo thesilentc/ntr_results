@@ -5,6 +5,10 @@ An event has a url
 An event has a winner
 An event has a prize
 
+Scrape all events from one page
+http://nationalteamroping.com/articles.sec-26-1-results.html
+doc.css(".title-txt h1").text
+
 
 Event 1. VIPs Win
 http://nationalteamroping.com/article-817-vips-win-%25249820_.html
