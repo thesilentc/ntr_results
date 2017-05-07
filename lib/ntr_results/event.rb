@@ -1,7 +1,7 @@
 class NtrResults::Event
   attr_accessor :name, :date, :location, :winner, :url
 
-  def self.today
+  def self.all
     # scrape nationalteamroping.com
     self.scrape_events
   end
