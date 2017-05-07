@@ -20,13 +20,13 @@ class NtrResults::CLI #controller cli
 
   def list_events
 
-    rows = []
+    # rows = []
     puts "----------National Team Roping Results:----------"
     puts " "
     @events ||= NtrResults::Event.all
     @events.each.with_index(1) do |event, i|
       # rows << [i, event.name]
-      puts "#{i}. #{event.name}"# - #{event.date} - #{event.location}"
+      puts "#{i}. #{event.name} - #{event.date} - #{event.location}"
     end
       list_events
   end
