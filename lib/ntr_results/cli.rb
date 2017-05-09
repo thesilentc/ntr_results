@@ -21,7 +21,7 @@ class NtrResults::CLI #controller cli
     input = nil
     while input != 'exit'
       puts " "
-      puts "Enter the number of the event you'd like more information about"
+      puts "Enter the number of the event you'd like to know the winners of"
       puts "or type 'list' to view the events again or type 'exit' to exit"
       input = gets.strip.downcase
 
