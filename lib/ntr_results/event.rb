@@ -59,8 +59,7 @@ class NtrResults::Event
     event.name = doc.search("#article-812 p")[0].text
     event.date  = doc.search("#article-812 p")[1].text
     event.location = doc.search("#article-812 p")[2].text
-    event.winner = doc.search("#contentText p")[10].text  # => "1st in Ave - 33.62 on 4, Sam Scott & John Miller  $1350"
-    # binding.pry
+    event.winner = doc.search("#article-812 p")[10].text  # => "1st in Ave - 33.62 on 4, Sam Scott & John Miller  $1350"
 
     event
   end

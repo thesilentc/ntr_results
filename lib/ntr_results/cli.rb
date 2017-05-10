@@ -2,13 +2,13 @@
 class NtrResults::CLI #controller cli
 
   def call
-    list_results
+    list_events
     menu
     # turbo_encabulator
 
   end
 
-  def list_results
+  def list_events
     puts "----------National Team Roping Results:----------"
     puts " "
     @events = NtrResults::Event.all
