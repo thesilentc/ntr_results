@@ -31,5 +31,13 @@ def scrape_events
 doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
 binding.pry
 events = doc.css(".title-txt h1").text
-events.split('').map{|event| event.to_i }
+events.split('').map{|event| event.to_i }   # .split will not work on an array []
 end
+
+# def self.scrape_ntr  This will list the individual events but not with an integer
+#   doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
+#
+#     event = self.new
+#
+#   event.name = doc.css(".title-txt h1").map {|e| puts e.text}
+# end

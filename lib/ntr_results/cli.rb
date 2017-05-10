@@ -25,7 +25,7 @@ class NtrResults::CLI #controller cli
       puts "or type 'list' to view the events again or type 'exit' to exit"
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 
         main_event = @events[input.to_i-1]
         puts "#{main_event.name} - #{main_event.winner}"
       elsif input == "list"
