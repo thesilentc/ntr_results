@@ -29,6 +29,27 @@ http://nationalteamroping.com/article-816-%25245000-sat.html
 Event 3. TGIF 4/7/17
 http://nationalteamroping.com/article-815-tgif-4_7_17.html
 
+
+===========
+doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
+event = self.new
+event.name = doc.css(".title-txt h1").text
+============
+
+# http://stackoverflow.com/questions/36430212/how-to-get-nokogiri-inner-html-object-to-ignore-remove-escape-sequences
+
+# http://kevinquillen.com/programming/2014/06/26/more-ruby-scraping-madness
+
+  # If your HTML fragment is in html, then you could do something like this:
+  #
+  # doc = Nokogiri::HTML(html)
+  # div = doc.at_css('#level2')   # Extract <div id="level2">
+  # div.at_css('#level3').remove  # Remove <div id="level3">
+  # text_you_want = div.inner_text
+  # You could also do it with XPath but I find CSS selectors a bit simpler for simple cases like this.
+
+
+
 def display_events
     Event.all.each do |event|
       puts "#{event.name.upcase}".colorize(:blue)
