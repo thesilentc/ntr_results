@@ -1,7 +1,7 @@
 
 class NtrResults::CLI #controller cli
 
-  @events = NtrResults::Event.all
+  @events = NtrResults::Scraper.all
 
   def call
     list_events
@@ -13,7 +13,7 @@ class NtrResults::CLI #controller cli
   def list_events
     puts "----------National Team Roping Results:----------"
     puts " "
-    @events = NtrResults::Event.all
+    @events = NtrResults::Scraper.all
     @events.each.with_index(1) do |event, i|
       puts "#{i}. #{event.name} - #{event.date} - #{event.location}"
     end
