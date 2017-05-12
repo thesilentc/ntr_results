@@ -16,7 +16,7 @@ class NtrResults::Scraper
     events
   end
 
-  def self.scrape_ntr2
+  def self.scrape_ntr
       doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
       event = self.new
       event.name = doc.search(".title-txt h1").collect{ |e| "#{e}" }  #{|e| e.text.gsub}
