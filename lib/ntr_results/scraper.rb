@@ -19,11 +19,12 @@ class NtrResults::Scraper
   def self.scrape_ntr
       doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
       event = self.new
-      event.name = doc.search(".title-txt h1").text{ |e| "#{e}"}  #{|e| e.text.gsub}
-      # doc.search('h1', 'a').remove
+      event.name = doc.css(".title-txt h1 a").collect{|e| e.text}
+      # event.name = doc.css(".title-txt h1 a").collect{ |e| "#{e}"}
+      # event.name = doc.css(".title-txt h1 a").collect.to_s{ |e| "#{e}"}
       event
   end
-# doc.search('.box-single', '.marker', 'h2', '#news-single-img').remove
+
 
   def self.scrape_ntr1
     doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-812-rancho-rio-qualifier.html"))
