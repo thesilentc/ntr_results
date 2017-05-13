@@ -1,20 +1,47 @@
-class NtrResults::Scraper
+class NtrResults::Event
   attr_accessor :name, :date, :location, :winner, :url
+  @@all = []
 
-  def self.all
-    # scrape nationalteamroping.com
-    self.scrape_events
-  end
+    def initialize(row, name=nil, date=nil, url=nil, location=nil, winner=nil)
+      @name = name
+      @date = date
+      @url = url
+      @location = location
+      @winner = winner
 
-  def self.scrape_events
-    events = []
+      @@all << self unless @@all.include?(self.name)
+    end
 
-    events << self.scrape_ntr
-    # events << self.scrape_ntr2
-    # events << self.scrape_ntr3
+    def self.all    #NtrResults::Event.all for cli.rb 14  ???
+      @@all
+    end
 
-    events
-  end
+    def self.sorted
+        @@all.sort_by!{|event| event.to_i}
+    end
+
+end
+
+
+
+
+# class NtrResults::Scraper
+#   attr_accessor :name, :date, :location, :winner, :url
+#
+#   def self.all
+#     # scrape nationalteamroping.com
+#     self.scrape_events
+#   end
+#
+#   def self.scrape_events
+#     events = []
+#
+#     events << self.scrape_ntr
+#     # events << self.scrape_ntr2
+#     # events << self.scrape_ntr3
+#
+#     events
+#   end
 
   def self.scrape_ntr
       doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
