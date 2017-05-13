@@ -1,12 +1,12 @@
 
 class NtrResults::CLI #controller cli
 
-  # @events = NtrResults::Scraper.all
+  @events = NtrResults::Scraper.all
 
   def call
     list_events
     menu
-    NtrResults::Scraper.all
+    # turbo_encabulator
 
   end
 

@@ -1,56 +1,32 @@
-class NtrResults::Event
+class NtrResults::Scraper
   attr_accessor :name, :date, :location, :winner, :url
-  @@all = []
 
-    def initialize(row, name=nil, date=nil, url=nil, location=nil, winner=nil)
-      @name = name
-      @date = date
-      @url = url
-      @location = location
-      @winner = winner
-
-      @@all << self unless @@all.include?(self.name)
-    end
-
-    def self.all    #NtrResults::Event.all for cli.rb 14  ???
-      @@all
-    end
-
-    def self.sorted
-        @@all.sort_by!{|event| event.to_i}
-    end
-
-end
-
-
-
-
-# class NtrResults::Scraper
-#   attr_accessor :name, :date, :location, :winner, :url
-#
-#   def self.all
-#     # scrape nationalteamroping.com
-#     self.scrape_events
-#   end
-#
-#   def self.scrape_events
-#     events = []
-#
-#     events << self.scrape_ntr
-#     # events << self.scrape_ntr2
-#     # events << self.scrape_ntr3
-#
-#     events
-#   end
-
-  def self.scrape_ntr
-      doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
-      event = self.new
-      event.name = doc.css(".title-txt h1 a").collect{|e| e.text}
-      # event.name = doc.css(".title-txt h1 a").collect{ |e| "#{e}"}
-      # event.name = doc.css(".title-txt h1 a").collect.to_s{ |e| "#{e}"}
-      event
+  def self.all
+    # scrape nationalteamroping.com
+    self.scrape_events
   end
+
+  def self.scrape_events
+    events = []
+
+    events << self.scrape_ntr1
+    events << self.scrape_ntr2
+    events << self.scrape_ntr3
+    # events << self.scrape_ntr  
+
+    events
+  end
+
+  # remove comment below to scrape all events from one page and print to array
+
+  # def self.scrape_ntr
+  #     doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
+  #     event = self.new
+  #     event.name = doc.css(".title-txt h1 a").collect{|e| e.text}
+  #     # event.name = doc.css(".title-txt h1 a").collect{ |e| "#{e}"}
+  #     # event.name = doc.css(".title-txt h1 a").collect.to_s{ |e| "#{e}"}
+  #     event
+  # end
 
 
   def self.scrape_ntr1
@@ -89,4 +65,4 @@ def self.scrape_ntr3
   event
 end
 
-# end
+end
