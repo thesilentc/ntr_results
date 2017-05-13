@@ -89,4 +89,4 @@ def self.scrape_ntr3
   event
 end
 
-end
+# end
