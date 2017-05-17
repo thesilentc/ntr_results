@@ -1,4 +1,4 @@
-# NtrResults [![Gem Version](https://badge.fury.io/rb/ntr_results.svg)](https://badge.fury.io/rb/ntr_results)
+# NtrResults [![Gem Version](https://badge.fury.io/rb/ntr_results.svg)](https://badge.fury.io/rb/ntr_results) [![Code Climate](https://codeclimate.com/github/thesilentc/ntr-results/badges/gpa.svg)]
 
 # Welcome to  National Team Roping CLI  
 
