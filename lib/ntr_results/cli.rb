@@ -1,17 +1,19 @@
 
 class NtrResults::CLI #controller cli
 
+  @events = NtrResults::Scraper.all
+
   def call
-    list_results
+    list_events
     menu
     # turbo_encabulator
 
   end
 
-  def list_results
+  def list_events
     puts "----------National Team Roping Results:----------"
     puts " "
-    @events = NtrResults::Event.all
+    @events = NtrResults::Scraper.all
     @events.each.with_index(1) do |event, i|
       puts "#{i}. #{event.name} - #{event.date} - #{event.location}"
     end
@@ -25,13 +27,17 @@ class NtrResults::CLI #controller cli
       puts "or type 'list' to view the events again or type 'exit' to exit"
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if (input.to_i > 0) && (input.to_i < 4)
         main_event = @events[input.to_i-1]
         puts "#{main_event.name} - #{main_event.winner}"
       elsif input == "list"
-        list_results
+        list_events
       elsif input == "exit"
         turbo_encabulator
+      elsif input.to_i >= 3
+        sleep 0.33
+        puts "I'm sorry. There are only 3 events."
+        sleep 1.0
       else
         puts " "
         puts "I'm sorry. I don't understand what you want."

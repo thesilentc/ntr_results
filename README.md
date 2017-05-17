@@ -1,8 +1,9 @@
-# NtrResults
+# NtrResults [![Gem Version](https://badge.fury.io/rb/ntr_results.svg)](https://badge.fury.io/rb/ntr_results) [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ntr_results`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Welcome to  National Team Roping CLI  
 
-TODO: Delete this and the text above, and describe your gem
+This Ruby Gem provides a CLI to view recent events from National Team Roping and gives the user the option of seeing the winners of those events.
+
 
 ## Installation
 
@@ -22,7 +23,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the following and follow the on screen prompts.
+
+    $ ntr
 
 ## Development
 
@@ -38,4 +41,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/thesil
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
