@@ -2,7 +2,8 @@
 
 # Welcome to  National Team Roping CLI  
 
-This Ruby Gem provides a CLI to view recent events from National Team Roping and gives the user the option of seeing the winners of those events.
+This Ruby Gem provides a CLI to view recent events from National Team Roping and gives the user the option of seeing the winners of those events. [![Gem Version](https://badge.fury.io/rb/ntr_results.svg)](https://badge.fury.io/rb/ntr_results)
+
 
 ## Installation
 
