@@ -10,22 +10,22 @@ This Ruby Gem provides a CLI to view recent events from National Team Roping and
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ntr_results'
+gem ```'ntr_results'```
 ```
 
 And then execute:
 
-    `$ bundle`
+    ```$ bundle```
 
 Or install it yourself as:
 
-    `$ gem install ntr_results`
+    ```$ gem install ntr_results```
 
 ## Usage
 
 Type the following and follow the on screen prompts.
 
-    `$ ntr`
+    ```$ ntr```
 
 ## Development
 
