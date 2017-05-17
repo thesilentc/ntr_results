@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.email         = ["thesilentc@me.com"]
 
   spec.summary       = %q{This Ruby Gem provides a CLI to view recent events from National Team Roping and gives the user the option of seeing the winners of those events.}
-  spec.description   = %q{todo: Write a longer description or delete this line.}
   spec.homepage      = "https://github.com/thesilentc/ntr_results"
   spec.license       = "MIT"
 
