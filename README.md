@@ -25,7 +25,7 @@ Or install it yourself as:
 
 Type the following and follow the on screen prompts.
 
-    $ ntr
+    $ ntr-results
 
 ## Development
 
