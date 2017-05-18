@@ -1,3 +1,5 @@
+# Used only to help build the scraper. Will delete after assessment.
+
 class NtrResults::Event
   attr_accessor :name, :date, :location, :winner, :url
   @@all = []
@@ -12,7 +14,7 @@ class NtrResults::Event
       @@all << self unless @@all.include?(self.name)
     end
 
-    def self.all    #NtrResults::Event.all for cli.rb 14  ???
+    def self.all    #NtrResults::Event.all for cli.rb 4
       @@all
     end
 

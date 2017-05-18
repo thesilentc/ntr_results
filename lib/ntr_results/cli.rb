@@ -6,7 +6,7 @@ class NtrResults::CLI #controller cli
   def call
     list_events
     menu
-    # turbo_encabulator
+
 
   end
 

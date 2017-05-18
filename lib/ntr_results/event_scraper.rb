@@ -1,3 +1,8 @@
+# this class is in beta. This will scrape a web page
+#that lists all of the events and puts an array of those events
+
+#
+
 class NtrResults::EventScraper
 
   def event
@@ -12,5 +17,5 @@ class NtrResults::EventScraper
       # event.name = doc.css(".title-txt h1 a").collect.to_s{ |e| "#{e}"}
       event
   end
-  
+
 end
