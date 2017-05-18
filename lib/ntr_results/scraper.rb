@@ -1,13 +1,7 @@
 class NtrResults::Scraper
-  #attr_accessor :name, :date, :location, :winner, :url
-
-  # def self.all
-  #   # scrape nationalteamroping.com
-  #   self.scrape_events
-  # end
+  
 
   def self.scrape_events
-    #events = []
 
     self.scrape_ntr1
     self.scrape_ntr2
