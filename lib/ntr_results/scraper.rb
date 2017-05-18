@@ -1,20 +1,20 @@
 class NtrResults::Scraper
-  attr_accessor :name, :date, :location, :winner, :url
+  #attr_accessor :name, :date, :location, :winner, :url
 
-  def self.all
-    # scrape nationalteamroping.com
-    self.scrape_events
-  end
+  # def self.all
+  #   # scrape nationalteamroping.com
+  #   self.scrape_events
+  # end
 
   def self.scrape_events
-    events = []
+    #events = []
 
-    events << self.scrape_ntr1
-    events << self.scrape_ntr2
-    events << self.scrape_ntr3
-    # events << self.scrape_ntr  
+    self.scrape_ntr1
+    self.scrape_ntr2
+    self.scrape_ntr3
+    # events << self.scrape_ntr
 
-    events
+    #events
   end
 
   # remove comment below to scrape all events from one page and print to array
@@ -32,19 +32,18 @@ class NtrResults::Scraper
   def self.scrape_ntr1
     doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-812-rancho-rio-qualifier.html"))
 
-    event = self.new
+    event = NtrResults::Event.new
     event.name = doc.search("#article-812 p")[0].text
     event.date  = doc.search("#article-812 p")[1].text
     event.location = doc.search("#article-812 p")[2].text
     event.winner = doc.search("#article-812 p")[10].text  # => "1st in Ave - 33.62 on 4, Sam Scott & John Miller  $1350"
 
-    event
   end
 
 def self.scrape_ntr2
   doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-815-tgif-4_7_17.html"))
 
-  event = self.new
+  event = NtrResults::Event.new
   event.name = doc.search("#article-815 p")[0].text
   event.date  = doc.search("#article-815 p")[1].text
   event.location = doc.search("#article-815 p")[2].text
@@ -56,7 +55,7 @@ end
 def self.scrape_ntr3
   doc = Nokogiri::HTML(open("http://nationalteamroping.com/article-816-%25245000-sat.html"))
 
-  event = self.new
+  event = NtrResults::Event.new
   event.name = doc.search("#article-816 p")[0].text
   event.date  = doc.search("#article-816 p")[1].text
   event.location = doc.search("#article-816 p")[2].text

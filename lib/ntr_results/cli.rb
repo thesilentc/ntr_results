@@ -1,20 +1,18 @@
 
 class NtrResults::CLI #controller cli
 
-  @events = NtrResults::Scraper.all
 
   def call
+    NtrResults::Scraper.scrape_events
     list_events
     menu
-
-
   end
 
   def list_events
     puts "----------National Team Roping Results:----------"
     puts " "
-    @events = NtrResults::Scraper.all
-    @events.each.with_index(1) do |event, i|
+    NtrResults::Event.sort_by_name
+    NtrResults::Event.all.each.with_index(1) do |event, i|
       puts "#{i}. #{event.name} - #{event.date} - #{event.location}"
     end
   end
@@ -27,8 +25,8 @@ class NtrResults::CLI #controller cli
       puts "or type 'list' to view the events again or type 'exit' to exit"
       input = gets.strip.downcase
 
-      if (input.to_i > 0) && (input.to_i < 4)
-        main_event = @events[input.to_i-1]
+      if input.to_i.between?(1, NtrResults::Event.all.size)
+        main_event = NtrResults::Event.find(input.to_i-1)
         puts "#{main_event.name} - #{main_event.winner}"
       elsif input == "list"
         list_events
