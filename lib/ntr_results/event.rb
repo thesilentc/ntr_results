@@ -16,14 +16,7 @@ class NtrResults::Event
   end
 
   def self.sort_by_name()
-    #this method will return the events in alphabetical order of name
-
     @@all.sort_by!{|event| event.name}
-
   end
-    # @@all.sort_by { |event| event.downcase }
-    # @@all.sort_by {|event| event.upcase}
-    # @@all.sort
-  # end
-
+    
 end
