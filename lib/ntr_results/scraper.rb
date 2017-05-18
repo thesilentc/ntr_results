@@ -12,9 +12,9 @@ class NtrResults::Scraper
     self.scrape_ntr1
     self.scrape_ntr2
     self.scrape_ntr3
-    # events << self.scrape_ntr
+    # self.scrape_ntr
 
-    #events
+    
   end
 
   # remove comment below to scrape all events from one page and print to array
@@ -23,8 +23,7 @@ class NtrResults::Scraper
   #     doc = Nokogiri::HTML(open("http://nationalteamroping.com/articles.sec-26-1-results.html"))
   #     event = self.new
   #     event.name = doc.css(".title-txt h1 a").collect{|e| e.text}
-  #     # event.name = doc.css(".title-txt h1 a").collect{ |e| "#{e}"}
-  #     # event.name = doc.css(".title-txt h1 a").collect.to_s{ |e| "#{e}"}
+  #     
   #     event
   # end
 
