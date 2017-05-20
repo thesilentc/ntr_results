@@ -2,10 +2,8 @@
 engines:
   duplication:
     enabled: true
-    config:
-      # ... CONFIG CONTENT ...
     checks:
-      Similar code:
+      Similar Code:
         enabled: false
       languages:
       - ruby
