@@ -1,10 +1,15 @@
 ---
 engines:
+  bundler-audit:
+    enabled: true
   duplication:
     enabled: true
+    # ... CONFIG CONTENT ...
     checks:
-      Similar Code:
+      Similar code:
         enabled: false
+# ... CONFIG CONTENT ...
+    config:
       languages:
       - ruby
       - javascript
@@ -16,6 +21,7 @@ engines:
     enabled: true
 ratings:
   paths:
+  - Gemfile.lock
   - "**.inc"
   - "**.js"
   - "**.jsx"
