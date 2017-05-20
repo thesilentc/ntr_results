@@ -3,6 +3,10 @@ engines:
   duplication:
     enabled: true
     config:
+      # ... CONFIG CONTENT ...
+    checks:
+      Similar code:
+        enabled: false
       languages:
       - ruby
       - javascript
