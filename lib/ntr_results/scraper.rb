@@ -29,7 +29,7 @@ class NtrResults::Scraper
     event.name = doc.search("#article-812 p")[0].text
     event.date  = doc.search("#article-812 p")[1].text
     event.location = doc.search("#article-812 p")[2].text
-    winner = doc.search("#article-812 p")[10].text  # => "1st in Ave - 33.62 on 4, Sam Scott & John Miller  $1350"
+    event.winner = doc.search("#article-812 p")[10].text  # => "1st in Ave - 33.62 on 4, Sam Scott & John Miller  $1350"
 
   end
 
@@ -40,7 +40,8 @@ def self.scrape_ntr2
   event.name = doc.search("#article-815 p")[0].text
   event.date  = doc.search("#article-815 p")[1].text
   event.location = doc.search("#article-815 p")[2].text
-  winner = doc.search("#article-815 p")[7].text  # => "1st in Ave - 40.31 on 4, Bruce Northrop & Richard Mayfield  $1840"
+  event.winner = doc.search("#article-815 p")[7].text  # => "1st in Ave - 40.31 on 4, Bruce Northrop & Richard Mayfield  $1840"
+
 
 end
 
@@ -51,7 +52,8 @@ def self.scrape_ntr3
   event.name = doc.search("#article-816 p")[0].text
   event.date  = doc.search("#article-816 p")[1].text
   event.location = doc.search("#article-816 p")[2].text
-  winner = doc.search("#article-816 p")[7].text  # =>  "1st in Ave - 38.35 on 4, Jerry Turk & Pat Danehey  $5000"
+  event.winner = doc.search("#article-816 p")[7].text  # =>  "1st in Ave - 38.35 on 4, Jerry Turk & Pat Danehey  $5000"
+
 
 end
 
