@@ -18,5 +18,5 @@ class NtrResults::Event
   def self.sort_by_name()
     @@all.sort_by!{|event| event.name}
   end
-    
+
 end
