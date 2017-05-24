@@ -3,7 +3,7 @@ class NtrResults::CLI #controller cli
 
 
   def call
-    NtrResults::Scraper.scrape_events
+    NtrResults::Testscraper.scrape_events
     list_events
     menu
   end

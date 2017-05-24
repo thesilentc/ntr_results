@@ -1,4 +1,4 @@
-class NtrResults::Scrape_stager
+class NtrResults::Testscraper
 
 
   def self.scrape_events
@@ -7,4 +7,6 @@ class NtrResults::Scrape_stager
     event.name = doc.css(".title-txt h1 a").collect{|e| e.text}
 
     event
+  end
+
 end
