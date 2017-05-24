@@ -13,6 +13,7 @@ class NtrResults::CLI #controller cli
     puts " "
     NtrResults::Event.sort_by_name
     NtrResults::Event.all.each.with_index(1) do |event, i|
+      
       puts "#{i}. #{event.name} - #{event.date} - #{event.location}"
     end
   end
