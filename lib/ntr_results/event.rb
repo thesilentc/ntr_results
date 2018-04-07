@@ -19,7 +19,7 @@ class NtrResults::Event
     @@all.sort_by!{|event| event.name}
   end
 
-  def sort_by_index()
-    @@all.event.split('').map{|event| event.to_i }
-  end
+  # def sort_by_index()
+  #   @@all.event.split('').map{|event| event.to_i }
+  # end
 end
