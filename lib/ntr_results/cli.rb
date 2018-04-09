@@ -23,7 +23,7 @@ class NtrResults::CLI #controller cli
     input = nil
     while input != 'exit'
       puts " "
-      puts "Enter the number of the event you'd like to know the winners of"
+      puts "Enter the event you'd like to know the winners of"
       puts "or type 'list' to view the events again or type 'exit' to exit"
       input = gets.strip.downcase
 
@@ -36,7 +36,7 @@ class NtrResults::CLI #controller cli
         turbo_encabulator
       elsif input.to_i >= 3
         sleep 0.33
-        puts "I'm sorry. There are only 3 events."
+        puts "I'm sorry. Note: there are only 3 events."
         sleep 1.0
       else
         puts " "
