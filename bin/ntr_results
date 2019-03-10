@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "ntr_results"
+
+NtrEvents::CLI.new.call
