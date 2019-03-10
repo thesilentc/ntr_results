@@ -1,3 +1,3 @@
 module NtrResults
-  VERSION = "0.4"
+  VERSION = "2.0"
 end
